@@ -1,4 +1,7 @@
 PODS:
+  - ChameleonFramework/Default (2.1.0)
+  - ChameleonFramework/Swift (2.1.0):
+    - ChameleonFramework/Default
   - RxCocoa (6.7.0):
     - RxRelay (= 6.7.0)
     - RxSwift (= 6.7.0)
@@ -7,6 +10,7 @@ PODS:
   - RxSwift (6.7.0)
 
 DEPENDENCIES:
+  - ChameleonFramework/Swift (from `https://github.com/wowansm/Chameleon`, branch `swift5`)
   - RxCocoa
   - RxSwift
 
@@ -16,11 +20,22 @@ SPEC REPOS:
     - RxRelay
     - RxSwift
 
+EXTERNAL SOURCES:
+  ChameleonFramework:
+    :branch: swift5
+    :git: https://github.com/wowansm/Chameleon
+
+CHECKOUT OPTIONS:
+  ChameleonFramework:
+    :commit: 96d52c36a45847fff60bcff7a58fec1e4bd7390b
+    :git: https://github.com/wowansm/Chameleon
+
 SPEC CHECKSUMS:
+  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   RxCocoa: fb0aefb9e7229c8ab057acde714136d19117f102
   RxRelay: 5d39f4d8da150ad47a71b9ce11915e3eae2a8f4d
   RxSwift: 6ee35684dc3f7a63938758f4b7708199517dfa97
 
-PODFILE CHECKSUM: 7736f309c3ae0c4ac1214d6d5c893bccee1dc4fb
+PODFILE CHECKSUM: fb50089401205b147376ad76ea554aabdebb4ece
 
 COCOAPODS: 1.15.0
