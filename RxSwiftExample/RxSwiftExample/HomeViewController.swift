@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Moya
+import Moya_ModelMapper
+import RxCocoa
+import RxSwift
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -21,9 +25,16 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.dataSource = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         title = "Home"
+        
+        setupRx()
     }
+    
+    func setupRx() {
+        
+    }
+}
 
-    // MARK: - Table view data source
+extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
