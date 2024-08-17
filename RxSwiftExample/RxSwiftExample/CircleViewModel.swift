@@ -14,6 +14,7 @@ class CircleViewModel {
     
     var centerVariable = BehaviorRelay<CGPoint?>(value: .zero)
     var backgroundColorObservable: Observable<UIColor>!
+    var cornerRadiusObservable: Observable<CGFloat>! // to do
     
     init() {
         setup()
