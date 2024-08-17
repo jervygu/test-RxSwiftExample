@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0776FA942C7042C700F8ED81 /* GithubEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776FA932C7042C700F8ED81 /* GithubEndpoint.swift */; };
+		0776FA962C704C8200F8ED81 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776FA952C704C8200F8ED81 /* Repository.swift */; };
+		0776FA982C704E2600F8ED81 /* IssueTrackerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0776FA972C704E2600F8ED81 /* IssueTrackerModel.swift */; };
 		079357662C6EF4C4001A1DB0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079357652C6EF4C4001A1DB0 /* AppDelegate.swift */; };
 		079357682C6EF4C4001A1DB0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079357672C6EF4C4001A1DB0 /* SceneDelegate.swift */; };
 		0793576D2C6EF4C4001A1DB0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0793576B2C6EF4C4001A1DB0 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 
 /* Begin PBXFileReference section */
 		0776FA932C7042C700F8ED81 /* GithubEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndpoint.swift; sourceTree = "<group>"; };
+		0776FA952C704C8200F8ED81 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		0776FA972C704E2600F8ED81 /* IssueTrackerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueTrackerModel.swift; sourceTree = "<group>"; };
 		079357622C6EF4C4001A1DB0 /* RxSwiftExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxSwiftExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		079357652C6EF4C4001A1DB0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		079357672C6EF4C4001A1DB0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 				0793576B2C6EF4C4001A1DB0 /* Main.storyboard */,
 				079357792C6EF55F001A1DB0 /* HomeViewController.swift */,
 				0776FA932C7042C700F8ED81 /* GithubEndpoint.swift */,
+				0776FA952C704C8200F8ED81 /* Repository.swift */,
+				0776FA972C704E2600F8ED81 /* IssueTrackerModel.swift */,
 				0793576E2C6EF4C6001A1DB0 /* Assets.xcassets */,
 				079357702C6EF4C6001A1DB0 /* LaunchScreen.storyboard */,
 				079357732C6EF4C6001A1DB0 /* Info.plist */,
@@ -211,7 +217,9 @@
 			files = (
 				079357662C6EF4C4001A1DB0 /* AppDelegate.swift in Sources */,
 				0793577A2C6EF55F001A1DB0 /* HomeViewController.swift in Sources */,
+				0776FA962C704C8200F8ED81 /* Repository.swift in Sources */,
 				079357682C6EF4C4001A1DB0 /* SceneDelegate.swift in Sources */,
+				0776FA982C704E2600F8ED81 /* IssueTrackerModel.swift in Sources */,
 				0776FA942C7042C700F8ED81 /* GithubEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
