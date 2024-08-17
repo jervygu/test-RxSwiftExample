@@ -35,5 +35,3 @@ struct Issue: Mappable {
         try body = map.from("body")
     }
 }
-
-extension Issue: Decodable { }
