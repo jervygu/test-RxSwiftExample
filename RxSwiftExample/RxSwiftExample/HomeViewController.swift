@@ -16,45 +16,38 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var shownCities = [String]() // Data source for UITableView
-    let allCities = ["New York", "London", "Oslo", "Warsaw", "Berlin", "Praga"] // Our mocked API data source
+    let disposeBag = DisposeBag()
+    var provider: MoyaProvider<GitHub>!
+    // var provider2: RxMoyaProvider!
+    var latestRepositoryName: Observable<String> {
+        return searchBar
+            .rx.text
+            .orEmpty
+            .debounce(RxTimeInterval.milliseconds(500), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         title = "Home"
+        view.backgroundColor = .systemBackground
         
         setupRx()
     }
     
     func setupRx() {
+        // First part of the puzzle, create our Provider
+        provider = MoyaProvider<GitHub>()
         
-    }
-}
-
-extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allCities.count
-    }
-
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
-        let item = allCities[indexPath.row]
-        
-        var content = cell.defaultContentConfiguration()
-        content.text = item
-        content.secondaryText = "SecondaryText"
-        content.image = UIImage(systemName: "person.circle")
-        cell.contentConfiguration = content
-        return cell
+        // Here we tell table view that if user clicks on a cell,
+        // and the keyboard is still visible, hide it
+        tableView
+            .rx.itemSelected
+            .subscribe(onNext: { indexPath in
+                if self.searchBar.isFirstResponder == true {
+                    self.view.endEditing(true)
+                }
+            })
+            .disposed(by: disposeBag)
     }
 }
